@@ -3,7 +3,7 @@ import { useState } from 'react'
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     const navbarHeight = 48;
     if (element) {
