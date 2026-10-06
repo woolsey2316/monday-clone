@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f6f7fb;
+  --sidebar: #292f4c;
+  --sidebar-hover: #3a4060;
+  --accent: #0073ea;
+  --border: #e6e9ef;
+  --text: #323338;
+  --muted: #676879;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
