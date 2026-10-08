@@ -42,6 +42,7 @@ class BoardColumn(models.Model):
     class ColumnType(models.TextChoices):
         STATUS = "status", "Status"
         TEXT = "text", "Text"
+        TIMELINE = "timeline", "Timeline"
 
     board = models.ForeignKey(
         Board,

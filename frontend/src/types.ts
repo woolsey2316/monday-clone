@@ -30,7 +30,7 @@ export type Group = {
 export type BoardColumn = {
   id: number;
   title: string;
-  type: "status" | "text";
+  type: "status" | "text" | "timeline";
   position: number;
 };
 

@@ -30,6 +30,12 @@ def seed_board_defaults(board: Board) -> None:
         type=BoardColumn.ColumnType.TEXT,
         position=1,
     )
+    BoardColumn.objects.create(
+        board=board,
+        title="Timeline",
+        type=BoardColumn.ColumnType.TIMELINE,
+        position=2,
+    )
     Group.objects.create(
         board=board,
         title="New Group",

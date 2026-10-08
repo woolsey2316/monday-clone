@@ -8,7 +8,7 @@ Fullstack starter for a Monday.com-style work board app.
 
 - JWT register / login
 - Per-user workspaces and boards
-- Groups, items, status + text columns
+- Groups, items, status + text + timeline columns
 - Board UI with sidebar navigation
 
 ## Quick start (Docker Compose)
@@ -32,8 +32,8 @@ docker compose up --build
 - Admin: http://localhost:8000/admin  
 
 1. Open the app and **register** a user  
-2. Create a **workspace**, then a **board** (seeded with Status/Text columns and a group)  
-3. Add items, set status, edit text cells  
+2. Create a **workspace**, then a **board** (seeded with Status/Text/Timeline columns and a group)  
+3. Add items, set status, edit text cells, pick timeline dates  
 
 ## Local development (without full Compose)
 
