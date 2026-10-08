@@ -47,6 +47,11 @@ export function BoardPage({ boardId }: BoardPageProps) {
     await load();
   }
 
+  async function renameGroup(groupId: number, title: string) {
+    await boardsApi.updateGroup(groupId, { title });
+    await load();
+  }
+
   async function addItem(groupId: number) {
     await boardsApi.createItem(groupId, { name: "New Item" });
     await load();
@@ -95,9 +100,25 @@ export function BoardPage({ boardId }: BoardPageProps) {
                 className="inline-block h-3 w-3 rounded-sm"
                 style={{ background: group.color }}
               />
-              <h2 className="text-base font-semibold" style={{ color: group.color }}>
-                {group.title}
-              </h2>
+              <input
+                className="bg-transparent text-base font-semibold outline-none"
+                style={{ color: group.color }}
+                defaultValue={group.title}
+                key={`${group.id}-${group.title}`}
+                onBlur={(e) => {
+                  const next = e.target.value.trim();
+                  if (!next || next === group.title) {
+                    e.target.value = group.title;
+                    return;
+                  }
+                  void renameGroup(group.id, next);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.currentTarget.blur();
+                  }
+                }}
+              />
               <span className="text-xs text-[var(--muted)]">
                 {group.items.length} items
               </span>

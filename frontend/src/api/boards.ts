@@ -35,6 +35,14 @@ export async function createGroup(
   return data;
 }
 
+export async function updateGroup(
+  groupId: number,
+  payload: { title?: string; color?: string },
+): Promise<Group> {
+  const { data } = await api.patch(`/api/groups/${groupId}/`, payload);
+  return data;
+}
+
 export async function createItem(
   groupId: number,
   payload: { name?: string } = {},
